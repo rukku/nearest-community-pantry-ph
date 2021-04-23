@@ -232,7 +232,7 @@ $.get('https://anditabinas.carto.com/api/v2/sql?format=GeoJSON&q=SELECT%20the_ge
         within.features.forEach(function(feature){
             var distance = parseFloat(turf.distance(point, feature, 'kilometers'));
             feature.properties["marker-color"] = "#6E6E6E";
-            feature.properties["title"] = '<span>'+mileConvert(distance)+'</span><br>'+'<strong>'+feature.properties["name"]+'</strong>'+'<br>'+feature.properties["product"]+'<br>'+feature.properties["sched"]+'<br>'+feature.properties["price"]+checkPhone(feature.properties["contact"])+'<br><strong>Click for walking route</strong>';
+            feature.properties["title"] = '<span>'+mileConvert(distance)+'</span><br>'+'<strong>'+feature.properties["name"]+'</strong>'+'<br>'+feature.properties["supplies"]+'<br>'+feature.properties["sched"]+'<br>'+feature.properties["contact"]+checkPhone(feature.properties["number"])+'<br><strong>Click for walking route</strong>';
             feature.properties["marker-size"] = "small";
             feature.properties["marker-symbol"] = "warehouse";
         })
@@ -241,7 +241,7 @@ $.get('https://anditabinas.carto.com/api/v2/sql?format=GeoJSON&q=SELECT%20the_ge
         var nearestdist = parseFloat(turf.distance(point, nearest, 'kilometers'));
 
             nearest.properties["marker-color"] = "#00704A";
-            nearest.properties["title"] = '<span>'+mileConvert(nearestdist)+' (nearest)</span><br>'+'<strong>'+nearest.properties["name"]+'</strong>'+'<br>'+nearest.properties["product"]+'<br>'+nearest.properties["sched"]+'<br>'+nearest.properties["price"]+ checkPhone(nearest.properties["contact"])+'<br><strong>Click for walking route</strong>';
+            nearest.properties["title"] = '<span>'+mileConvert(nearestdist)+' (nearest)</span><br>'+'<strong>'+nearest.properties["name"]+'</strong>'+'<br>'+nearest.properties["supplies"]+'<br>'+nearest.properties["sched"]+'<br>'+nearest.properties["contact"]+ checkPhone(nearest.properties["number"])+'<br><strong>Click for walking route</strong>';
             nearest.properties["marker-size"] = "medium";
             nearest.properties["marker-symbol"] = "warehouse";
 
