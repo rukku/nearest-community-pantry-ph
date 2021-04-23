@@ -105,7 +105,7 @@ function pointBuffer (pt, radius, units, resolution) {
   return turf.polygon([ring])
 }
 
-$.get('https://anditabinas.carto.com/api/v2/sql?format=GeoJSON&q=SELECT%20the_geom,%20name,%20product,%20price,%20contact,%20address,%20sched,%20more%20FROM%20saanmaynagdedeliver', function(data){
+$.get('https://anditabinas.carto.com/api/v2/sql?format=GeoJSON&q=SELECT%20the_geom,%20name,%20supplies,%20contact,%20number,%20street_address,%20barangay,%20municipality_city,%20province,%20region,%20sched,%20more%20FROM%20saanmaynagdedeliver', function(data){
     $('.blocker').remove();
     $('#topbar').show();
 
